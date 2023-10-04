@@ -11,49 +11,16 @@
 ### Program:
 
 ### Create employee table
-```
-CREATE TABLE employd (
-  empid NUMBER,
-  empname VARCHAR(10),
-  dept VARCHAR(10),
-  salary NUMBER
-);
-select * from employd;
-INSERT INTO employd VALUES (1, 'John Doe', 'Sales', 100000);
-INSERT INTO employd VALUES (2, 'Jane Doe', 'Marketing', 120000);
-```
+![Screenshot 2023-10-04 211458](https://github.com/selva258963/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/121961701/8fe1425f-db7d-445f-8139-b846d87008f2)
+
 
 ### PLSQL Cursor code
-```
-DECLARE
-   CURSOR employd_cursor IS
-   SELECT empid,empname,dept,salary
-   FROM employd;
-   emp_id NUMBER;
-   emp_name VARCHAR(50);
-   emp_dept VARCHAR(50);
-   emp_salary NUMBER;
-BEGIN
-  OPEN employd_cursor;
+![Screenshot 2023-10-04 211535](https://github.com/selva258963/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/121961701/8221e91e-3eeb-4adf-b96e-591c47a990a2)
 
-  LOOP
-    FETCH employd_cursor INTO emp_id, emp_name, emp_dept, emp_salary;
-
-    EXIT WHEN employd_cursor%NOTFOUND;
-
-    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_id);
-    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
-    DBMS_OUTPUT.PUT_LINE('Department: ' || emp_dept);
-    DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);
-  END LOOP;
-
-  CLOSE employd_cursor;
-END;
-/
-```
 
 ### Output:
-![WhatsApp Image 2023-09-26 at 23 04 09](https://github.com/ShakthiSundar-K/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/128116143/c8816d35-3848-496c-a08b-7b7d27d6620b)
+![Screenshot 2023-10-04 211552](https://github.com/selva258963/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/121961701/aeb7e918-2e0a-4f10-9fc1-50fc427408f7)
+
 
 ### Result:
 THE PROGRAM HAS BEEN IMPLEMENTED SUCCESSFULLY
